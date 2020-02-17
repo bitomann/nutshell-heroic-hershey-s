@@ -9,7 +9,7 @@ const addToDom = (html) => {
 }
 
 const renderTasks = (tasksArray) => {
-tasksContainer.innerHTML = ""
+// tasksContainer.innerHTML = ""
 tasksArray.forEach(task => {
     const renderedTask = createTaskEntry(task)
     addToDom(renderedTask)
