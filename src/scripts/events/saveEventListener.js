@@ -1,6 +1,6 @@
 // Matt Reeds - This is the event listener that gets the values of the added event and renders to dom
-import domOperations from "./events/eventsDomHandler.js"
-import apiActions from "./events/eventsDataHandler.js"
+import domOperations from "./eventsDomHandler.js"
+import apiActions from "./eventsDataHandler.js"
 
 const entryContainer = document.querySelector("#events-container");
 
@@ -9,9 +9,9 @@ const clearForm = () => {
     const eventDate = document.getElementById("eventDate");
     const eventLocation = document.getElementById("eventLocation");
 
-        eventName.value = "";
-        eventDate.value = "";
-        eventLocation.value= "";
+    eventName.value = "";
+    eventDate.value = "";
+    eventLocation.value = "";
 }
 
 const saveEventButton = {

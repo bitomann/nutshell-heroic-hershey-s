@@ -14,10 +14,12 @@ const domOperations = {
     },
 
     renderEventEntries: (entries) => {
+        const newArray = entries.reverse();
         entryContainer.innerHTML += "";
-        entries.forEach(entry => {
+        newArray.forEach(entry => {
             entryContainer.innerHTML +=
                 eventComponentObj.eventCardComponent(entry);
+            // add a conditional statement that applies the required styling to upcoming event
         })
     }
 }
