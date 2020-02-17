@@ -15,13 +15,17 @@ sessionStorage.setItem("activeUser", 1)
 
 //news section tools - Katie Wohl
 API.getNewsArticles().then(renderNewsArticles)
-
 newsEvents.addSaveEventListener()
 
 
 //Matt Reeds - getting the events data, rendering to dom, and calling the event listeners on the events buttons
+
+//events section tools - Matt Reeds
 apiActions.getEvents()
 .then(domOperations.renderEventEntries);
 newEventButton.eventButtonFunction()
 saveEventButton.saveEventFunction()
 
+//tasks section tools - Cooper Nichols
+import taskEvents from "./tasks/tasksEventListeners.js"
+taskEvents.renderAllTasks()
