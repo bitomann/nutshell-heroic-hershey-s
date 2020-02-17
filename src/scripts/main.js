@@ -1,6 +1,11 @@
 import API from "./articles/apiManager.js"
 import renderNewsArticles from "./articles/domManager.js"
 import newsEvents from "./articles/eventListeners.js"
+import apiActions from "./events/eventsDataHandler.js";
+import domOperations from "./events/eventsDomHandler.js";
+import newEventButton from "./events/eventFormListener.js";
+import saveEventButton from "./events/saveEventListener.js"
+
 /*
     Import all the tools into main.js that are needed to display
     the initial UI to the user. Either the login form should appear
@@ -16,23 +21,17 @@ import newsEvents from "./articles/eventListeners.js"
 API.getNewsArticles().then(renderNewsArticles)
 newsEvents.addSaveEventListener()
 
-<<<<<<< HEAD
-
 //events section tools - Matt Reeds
-=======
->>>>>>> 6491274a4dad0f02d8c2d493529e50b90391f1dd
 import apiActions from "./eventsDataHandler.js";
 import domOperations from "./eventsDomHandler.js";
 import newEventButton from "./eventDomForm.js";
 
-<<<<<<< HEAD
+//Matt Reeds - getting the events data, rendering to dom, and calling the event listeners on the events buttons
 
-=======
-//events section tools - Matt Reeds
->>>>>>> 6491274a4dad0f02d8c2d493529e50b90391f1dd
 apiActions.getEvents()
 .then(domOperations.renderEventEntries);
 newEventButton.eventButtonFunction()
+saveEventButton.saveEventFunction()
 
 //tasks section tools - Cooper Nichols
 import taskEvents from "./tasks/tasksEventListeners.js"
