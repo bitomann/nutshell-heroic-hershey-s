@@ -1,3 +1,5 @@
+// render functionality for DOM -- Cooper Nichols
+
 import createTaskEntry from "./tasksHtmlFactory.js"
 
 
@@ -7,7 +9,7 @@ const addToDom = (html) => {
 }
 
 const renderTasks = (tasksArray) => {
-// tasksContainer.innerHTML = ""
+tasksContainer.innerHTML = ""
 tasksArray.forEach(task => {
     const renderedTask = createTaskEntry(task)
     addToDom(renderedTask)

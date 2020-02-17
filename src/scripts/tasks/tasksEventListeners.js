@@ -1,3 +1,5 @@
+//event listeners and click events - Cooper Nichols
+
 import renderTasks from "./tasksRender.js"
 import tasksAPI from "./tasksApi.js"
 
