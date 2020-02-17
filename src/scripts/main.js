@@ -16,6 +16,7 @@ sessionStorage.setItem("activeUser", 1)
 const currentUserId = parseInt(sessionStorage.getItem("activeUser"))
 
 taskEvents.renderAllTasks()
+
 apiActions.getEvents()
 .then(domOperations.renderEventEntries);
 newEventButton.eventButtonFunction()
