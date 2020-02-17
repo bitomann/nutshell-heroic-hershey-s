@@ -6,8 +6,10 @@
 import apiActions from "./eventsDataHandler.js";
 import domOperations from "./eventsDomHandler.js";
 import newEventButton from "./eventFormListener.js";
+import saveEventButton from "./saveEventListener.js"
 
 apiActions.getEvents()
 .then(domOperations.renderEventEntries);
 newEventButton.eventButtonFunction()
+saveEventButton.saveEventFunction()
 
