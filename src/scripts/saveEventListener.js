@@ -2,23 +2,20 @@
 import domOperations from "./eventsDomHandler.js"
 import apiActions from "./eventsDataHandler.js"
 
+const entryContainer = document.querySelector("#events-container");
 
 const saveEventButton = {
     saveEventFunction: () => {
         const saveButton = document.getElementById("save-event");
 
         saveButton.addEventListener("click", () => {
+            entryContainer.innerHTML = "";
             const eventName = document.getElementById("eventName").value;
             const eventDate = document.getElementById("eventDate").value;
             const eventLocation = document.getElementById("eventLocation").value;
 
-            const eventEntryObject = domOperations.renderEventEntries(eventName, eventDate, eventLocation);
+            const eventEntryObject = domOperations.eventEntryFactory(eventName, eventDate, eventLocation);
 
-            const entry = {
-                name: eventName,
-                date: eventDate, 
-                location: eventLocation
-            }
             apiActions.saveEventEntry(eventEntryObject)
                     .then(() => {
                         apiActions.getEvents()

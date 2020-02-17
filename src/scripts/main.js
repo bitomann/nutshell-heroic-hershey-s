@@ -1,6 +1,10 @@
 import API from "./articles/apiManager.js"
 import renderNewsArticles from "./articles/domManager.js"
 import newsEvents from "./articles/eventListeners.js"
+import apiActions from "./eventsDataHandler.js";
+import domOperations from "./eventsDomHandler.js";
+import newEventButton from "./eventFormListener.js";
+import saveEventButton from "./saveEventListener.js"
 
 /*
     Import all the tools into main.js that are needed to display
@@ -13,11 +17,9 @@ sessionStorage.setItem("activeUser", 1)
 API.getNewsArticles().then(renderNewsArticles)
 
 newsEvents.addSaveEventListener()
-import apiActions from "./eventsDataHandler.js";
-import domOperations from "./eventsDomHandler.js";
-import newEventButton from "./eventFormListener.js";
-import saveEventButton from "./saveEventListener.js"
 
+
+// getting the events data, rendering to dom, and calling the event listeners on the events buttons
 apiActions.getEvents()
 .then(domOperations.renderEventEntries);
 newEventButton.eventButtonFunction()
