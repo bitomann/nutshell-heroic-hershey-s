@@ -13,19 +13,15 @@ import taskEvents from "./tasks/tasksEventListeners.js"
     or the dashboard should be rendered.
 */
 sessionStorage.setItem("activeUser", 1)
-
 //news section tools - Katie Wohl
 API.getNewsArticles().then(renderNewsArticles)
 newsEvents.addSaveEventListener()
-
-
+newsEvents.addNewArticleEventListener()
 //Matt Reeds - getting the events data, rendering to dom, and calling the event listeners on the events buttons
-
 //events section tools - Matt Reeds
 apiActions.getEvents()
 .then(domOperations.renderEventEntries);
 newEventButton.eventButtonFunction()
 saveEventButton.saveEventFunction()
-
 //tasks section tools - Cooper Nichols
 taskEvents.renderAllTasks()
