@@ -9,3 +9,8 @@ const message = "Time to build an application that gives you all the information
 document.querySelector("#container").innerHTML = `<h1>${message}</h1>`
 
 console.log(message)
+
+//in your main.js (until you reach the log in ticket)
+sessionStorage.setItem("activeUser", 1)
+//wherever you need to use the id of the user that is logged in, you will reference the variable currentUserId
+const currentUserId = parseInt(sessionStorage.getItem("activeUser"))
