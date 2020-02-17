@@ -5,7 +5,7 @@
 */
 import apiActions from "./eventsDataHandler.js";
 import domOperations from "./eventsDomHandler.js";
-import newEventButton from "./eventDomForm.js";
+import newEventButton from "./eventFormListener.js";
 
 apiActions.getEvents()
 .then(domOperations.renderEventEntries);
