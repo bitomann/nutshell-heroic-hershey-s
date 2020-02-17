@@ -1,12 +1,23 @@
+/* styles for main container */
+#container {
+    display: flex;
+    flex-direction: row;
+}
+
 /* styles for news div */
+.hidden {
+    display: none;
+}
 
 #newsContainer {
-    border: teal 1px solid;
     max-width: 25%;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 #newsInputContainer {
     margin: 2%;
+    overflow: ;
 }
 
 #newsInputContainer input {
