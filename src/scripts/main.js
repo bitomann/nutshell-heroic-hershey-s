@@ -3,9 +3,11 @@
     the initial UI to the user. Either the login form should appear
     or the dashboard should be rendered.
 */
+import apiActions from "./eventsDataHandler.js";
+import domOperations from "./eventsDomHandler.js";
+import newEventButton from "./eventDomForm.js";
 
-const message = "Time to build an application that gives you all the information you need in a Nutshell"
+apiActions.getEvents()
+.then(domOperations.renderEventEntries);
+newEventButton.eventButtonFunction()
 
-document.querySelector("#container").innerHTML = `<h1>${message}</h1>`
-
-console.log(message)
