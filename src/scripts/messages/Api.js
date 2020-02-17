@@ -6,12 +6,10 @@ export default {
         return fetch(`${baseUrl}/messages`)
             .then(allMessages => allMessages.json());
     },
-
     getSingleMessage(id) {
         return fetch(`${baseUrl}/messages/${id}`)
-            .then(singleMessage => singleMessage.json());
+            .then(singleMsg => singleMsg.json());
     },
-
     addNewMessage(newMessage) {
         return fetch(`${baseUrl}/messages`, {
                 method: "POST",
@@ -20,7 +18,17 @@ export default {
                 },
                 body: JSON.stringify(newMessage)
             })
-            .then(newMessage => newMessage.json())
+            .then(newMsg => newMsg.json())
+    },
+    editMessage: (editedMessage) => {
+        return fetch(`${baseUrl}/messages/${editedEntry.id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(editedMessage)
+            })
+            .then(editedMsg => editedMsg.json())
     }
     // ,
 

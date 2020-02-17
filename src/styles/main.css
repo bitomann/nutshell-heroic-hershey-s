@@ -7,3 +7,27 @@
     background-position: center top;
     z-index: -1;
 } */
+/* styles for news div */
+
+#newsContainer {
+    border: teal 1px solid;
+    max-width: 25%;
+}
+
+#newsInputContainer {
+    margin: 2%;
+}
+
+#newsInputContainer input {
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+}
+
+#newsSave {
+    margin: 2%;
+}
+
+.article {
+    margin: 4%;
+}
