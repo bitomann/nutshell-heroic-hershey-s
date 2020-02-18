@@ -25,11 +25,9 @@ export default {
 
         eventContainer.addEventListener("click", (event) => {
             if (event.target.id.startsWith("deleteEvent--")) {
-                const deleteBtnId = event.target.id;
-                const deleteBtnArray = deleteBtnId.split("--");
-                const entryToDelete = deleteBtnArray[1];
+                const deleteBtnId = event.target.id.split("--")[1]
 
-                apiActions.deleteEventEntry(entryToDelete)
+                apiActions.deleteEventEntry(deleteBtnId)
                     .then(apiActions.getEvents)
                     .then(domOperations.renderEventEntries)
             } else if (event.target.id.startsWith("editEvent--")) {

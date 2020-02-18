@@ -1,6 +1,5 @@
 // Matt Reeds - Creates the structure for the data
 import eventComponentObj from "./eventComponent.js"
-import formComponentObj from "./eventFormComponent.js"
 
 const entryContainer = document.querySelector("#events-container");
 
@@ -16,7 +15,7 @@ const domOperations = {
 
     renderEventEntries: (entries) => {
         const newArray = entries.reverse();
-        entryContainer.innerHTML += "";
+        entryContainer.innerHTML = "";
         newArray.forEach(entry => {
             entryContainer.innerHTML +=
                 eventComponentObj.eventCardComponent(entry);

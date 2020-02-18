@@ -29,14 +29,9 @@ const saveEventButton = {
 
             const eventEntryObject = domOperations.eventEntryFactory(eventName, eventDate, eventLocation);
 
-            const eventEntry = {
-                name: eventName,
-                date: eventDate,
-                location: eventLocation
-            }
             if (entryId.value !== "") {
-                eventEntry.id = parseInt(entryId.value);
-                apiActions.updateEventEntry(event)
+                eventEntryObject.id = parseInt(entryId.value);
+                apiActions.updateEventEntry(eventEntryObject)
                     .then(apiActions.getEvents)
                     .then(domOperations.renderEventEntries)
                     .then(clearForm)
