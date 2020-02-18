@@ -6,7 +6,7 @@ import domOperations from "./events/eventsDomHandler.js";
 import newEventButton from "./events/eventFormListener.js";
 import saveEventButton from "./events/saveEventListener.js"
 import taskEvents from "./tasks/tasksEventListeners.js"
-import deleteBtn from "./events/updateEvents.js"
+import deleteBtn from "./events/editAndDelete.js"
 
 /*
     Import all the tools into main.js that are needed to display
