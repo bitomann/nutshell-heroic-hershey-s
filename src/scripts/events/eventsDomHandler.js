@@ -1,5 +1,6 @@
 // Matt Reeds - Creates the structure for the data
 import eventComponentObj from "./eventComponent.js"
+import formComponentObj from "./eventFormComponent.js"
 
 const entryContainer = document.querySelector("#events-container");
 
