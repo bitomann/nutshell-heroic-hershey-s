@@ -52,7 +52,8 @@
     </section>
 
     <div id="tasks">
-      <section id="tasks_forms">
+      <button id="openTaskForm" class="tasks_visToggle">Add A New Task</button>
+      <section id="tasks_forms" class="tasks_visToggle tasks_hidden">
         <h3>New Task</h3>
         <textarea id="task_description" rows="5" cols="30"></textarea>
         <br>
@@ -60,6 +61,7 @@
         <input type="date" name="task_completion_date" id="task_completion_date">
         <br>
         <button id="tasks_save_button" value="save">Save</button>
+        <button id="tasks_cancel_button" value="save">Cancel</button>
       </section>
       <h3>To-Do List</h3>
       <section id="tasks_container">
