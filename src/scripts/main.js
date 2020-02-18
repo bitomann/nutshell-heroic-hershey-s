@@ -17,6 +17,7 @@ API.getNewsArticles().then(renderNewsArticles).then(newsEvents.addOutputButtonLi
 newsEvents.addSaveEventListener()
 newsEvents.addNewArticleEventListener()
 newsEvents.addCancelEventListener()
+newsEvents.addEditSaveButtonEventListener()
 //Matt Reeds - getting the events data, rendering to dom, and calling the event listeners on the events buttons
 //events section tools - Matt Reeds
 apiActions.getEvents()
