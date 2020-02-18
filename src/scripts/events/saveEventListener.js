@@ -4,25 +4,46 @@ import apiActions from "./eventsDataHandler.js"
 
 const entryContainer = document.querySelector("#events-container");
 
+const clearForm = () => {
+    const entryId = document.getElementById("entryId")
+    const eventName = document.getElementById("eventName");
+    const eventDate = document.getElementById("eventDate");
+    const eventLocation = document.getElementById("eventLocation");
+
+    entryId.value = "";
+    eventName.value = "";
+    eventDate.value = "";
+    eventLocation.value = "";
+}
+
 const saveEventButton = {
     saveEventFunction: () => {
         const saveButton = document.getElementById("save-event");
 
         saveButton.addEventListener("click", () => {
             entryContainer.innerHTML = "";
+            const entryId = document.getElementById("entryId");
             const eventName = document.getElementById("eventName").value;
             const eventDate = document.getElementById("eventDate").value;
             const eventLocation = document.getElementById("eventLocation").value;
 
             const eventEntryObject = domOperations.eventEntryFactory(eventName, eventDate, eventLocation);
 
-            apiActions.saveEventEntry(eventEntryObject)
+            if (entryId.value !== "") {
+                eventEntryObject.id = parseInt(entryId.value);
+                apiActions.updateEventEntry(eventEntryObject)
+                    .then(apiActions.getEvents)
+                    .then(domOperations.renderEventEntries)
+                    .then(clearForm)
+            } else {
+                apiActions.saveEventEntry(eventEntryObject)
                     .then(() => {
                         apiActions.getEvents()
                             .then(domOperations.renderEventEntries)
+                            .then(clearForm)
                     })
+            }
         })
     }
 }
-
 export default saveEventButton
