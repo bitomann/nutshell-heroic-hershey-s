@@ -5,6 +5,7 @@ import renderNewsArticles from "./domManager.js"
 const newsSaveButton = document.querySelector("#newsSave")
 const newArticleButton = document.querySelector("#openNewsForm")
 const newsCancelButton = document.querySelector("#closeNewsForm")
+const newsLegend = document.querySelector("#newsLegend")
 
 const newsTitleInput = document.querySelector("#articleTitle")
 const newsUrlInput = document.querySelector("#articleUrl")
@@ -56,6 +57,7 @@ const newsEvents = {
             const toggleArray = Array.from(visToggle)
 
             toggleArray.forEach(item => item.classList.toggle("hidden"))
+            newsLegend.textContent = "Save a News Article"
         })
     },
     addOutputButtonListeners() {
@@ -70,7 +72,8 @@ const newsEvents = {
                 const articleToEdit = event.target.id.split("--")[1]
                 const newsEditToggle = document.querySelectorAll(".newsEditToggle")
                 const newsEditToggleArray = Array.from(newsEditToggle)
-
+                
+                newsLegend.textContent = "Edit a News Article"
                 newsEditToggleArray.forEach(item => item.classList.toggle("hidden"))
 
                 API.editNewsArticle(articleToEdit)
@@ -82,6 +85,7 @@ const newsEvents = {
                         .then(API.getNewsArticles)
                         .then(renderNewsArticles)
                     newsEditToggleArray.forEach(item => item.classList.toggle("hidden"))
+                    newsLegend.textContent = "Save a News Article"
                 })
             }
         })
