@@ -15,6 +15,20 @@ const apiActions = {
             },
             body: JSON.stringify(eventEntryObj)
         }).then(resp => resp.json());
+    },
+    updateEventEntry(event) {
+        return fetch (`${baseUrl}/${event.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(event)
+        })
+    },
+    deleteEventEntry(eventEntryId) {
+        return fetch(`${baseUrl}/${eventEntryId}`, {
+            method: "DELETE"
+        });
     }
 }
 
