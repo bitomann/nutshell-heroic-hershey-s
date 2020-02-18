@@ -33,3 +33,9 @@
 .article {
     margin: 4%;
 }
+
+/* styles for tasks div -- Cooper Nichols */
+
+.tasks_hidden {
+    display: none;
+}
