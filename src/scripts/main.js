@@ -23,8 +23,12 @@ apiActions.getEvents()
 newEventButton.eventButtonFunction()
 saveEventButton.saveEventFunction()
 //tasks section tools - Cooper Nichols
-import taskEvents from "./tasks/tasksEventListeners.js"
+// import taskEvents from "./tasks/tasksEventListeners.js"
 taskEvents.renderAllTasks()
+taskEvents.renderAllTasks()
+taskEvents.createTask()
+taskEvents.addNewTask()
+taskEvents.cancelNewTask()
 
 // messages - Bito
 import renderMessages from './messages/renderMessages.js'
@@ -40,7 +44,3 @@ data.getAllMessages()
         events.messageEventListener()
     })
 events.editEventListener();
-taskEvents.renderAllTasks()
-taskEvents.createTask()
-taskEvents.addNewTask()
-taskEvents.cancelNewTask()

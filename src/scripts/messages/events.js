@@ -25,8 +25,8 @@ const events = {
                 message: messageInput.value
             };
 
-            if (messageId.value !== "") {
-                message.id = parseInt(messageId.value);
+            if (messageInput.value !== "") {
+                message.id = parseInt(messageInput.value);
                 data.editMessage(message)
                     .then(data.getAllMessages)
                     .then(renderMessages)

@@ -24,7 +24,7 @@ const messageComponentsToDom = {
         const entryLog = document.querySelector("#messageForm");
         entryLog.innerHTML = `
     <form action="">
-    <input type="hidden" id="entryId" value="" />
+    <input type="hidden" id="messageId" value="" />
             <h1>Messages:</h1>
                 <label for="message">
                 <textarea name="message" id="messageInput" placeHolder="Type you message here.." 
