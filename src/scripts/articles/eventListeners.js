@@ -66,6 +66,24 @@ const newsEvents = {
                 .then(API.getNewsArticles)
                 .then(renderNewsArticles)
             }
+            if (event.target.id.startsWith("articleEditBtn--")) {
+                const articleToEdit = event.target.id.split("--")[1]
+                const newsEditToggle = document.querySelectorAll(".newsEditToggle")
+                const newsEditToggleArray = Array.from(newsEditToggle)
+
+                newsEditToggleArray.forEach(item => item.classList.toggle("hidden"))
+
+                API.editNewsArticle(articleToEdit)
+
+                const newsEditSaveBtn = document.querySelector("#newsEditSave")
+
+                newsEditSaveBtn.addEventListener("click", () => {
+                    API.updateNewsArticle(articleToEdit)
+                        .then(API.getNewsArticles)
+                        .then(renderNewsArticles)
+                    newsEditToggleArray.forEach(item => item.classList.toggle("hidden"))
+                })
+            }
         })
     }
 }

@@ -2,8 +2,9 @@
 
 import makeNewsComponent from "./htmlFactory.js"
 const newsContainer = document.querySelector("#newsOutputContainer")
+
 const renderNewsArticles = (articles) => {
-    
+    newsContainer.textContent = ""
     articles.forEach(article => {
         const articleHtml = makeNewsComponent(article)
         newsContainer.innerHTML += articleHtml

@@ -28,12 +28,13 @@
     </div>
     <section id="newsContainer">
       <div id="newsHeader">
-        <button id="openNewsForm" class="visToggle">Add a New Article</button>
+        <button id="openNewsForm" class="visToggle newsEditToggle">Add a New Article</button>
         <button id="newsSave" class="visToggle hidden">Save</button>
-        <button id="closeNewsForm" class="visToggle hidden">Cancel</button>
+        <button id="newsEditSave" class="newsEditToggle hidden">Save</button>
+        <button id="closeNewsForm" class="visToggle newsEditToggle hidden">Cancel</button>
       </div>
 
-      <div class="visToggle hidden" id="newsInputContainer">
+      <div class="visToggle newsEditToggle hidden" id="newsInputContainer">
         <fieldset>
           <legend>Save a News Article</legend>
           <label for="articleTitle">Title of Article</lable>
