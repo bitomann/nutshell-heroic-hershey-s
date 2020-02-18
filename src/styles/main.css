@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* body {
     background-image: url("./images/NUTSHELL_bg.jpg");
     opacity: 85%;
@@ -7,15 +8,28 @@
     background-position: center top;
     z-index: -1;
 } */
+=======
+/* styles for main container */
+#container {
+    display: flex;
+    flex-direction: row;
+}
+
+>>>>>>> master
 /* styles for news div */
+.hidden {
+    display: none;
+}
 
 #newsContainer {
-    border: teal 1px solid;
     max-width: 25%;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 #newsInputContainer {
     margin: 2%;
+    overflow: ;
 }
 
 #newsInputContainer input {
@@ -31,3 +45,12 @@
 .article {
     margin: 4%;
 }
+<<<<<<< HEAD
+=======
+
+/* styles for tasks div -- Cooper Nichols */
+
+.tasks_hidden {
+    display: none;
+}
+>>>>>>> master
