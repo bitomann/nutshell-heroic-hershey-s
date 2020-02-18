@@ -13,7 +13,7 @@ import taskEvents from "./tasks/tasksEventListeners.js"
 */
 sessionStorage.setItem("activeUser", 1)
 //news section tools - Katie Wohl
-API.getNewsArticles().then(renderNewsArticles)
+API.getNewsArticles().then(renderNewsArticles).then(newsEvents.addOutputButtonListeners)
 newsEvents.addSaveEventListener()
 newsEvents.addNewArticleEventListener()
 newsEvents.addCancelEventListener()

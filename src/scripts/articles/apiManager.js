@@ -15,8 +15,8 @@ const API = {
             body: JSON.stringify(newArticle)
         })
     },
-    deleteNewsArticle(interestId) {
-        return fetch(`${baseURL}/articles/${interestId}`, {
+    deleteNewsArticle(articleId) {
+        return fetch(`${baseURL}/articles/${articleId}`, {
             method: "DELETE"
         })
         .then(response => response.json())

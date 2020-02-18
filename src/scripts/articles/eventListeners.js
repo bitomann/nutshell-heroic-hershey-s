@@ -2,9 +2,9 @@ import API from "./apiManager.js"
 import renderNewsArticles from "./domManager.js"
 
 //event listeners for news section - Katie Wohl
-const saveButton = document.querySelector("#newsSave")
+const newsSaveButton = document.querySelector("#newsSave")
 const newArticleButton = document.querySelector("#openNewsForm")
-const cancelButton = document.querySelector("#closeNewsForm")
+const newsCancelButton = document.querySelector("#closeNewsForm")
 
 const newsTitleInput = document.querySelector("#articleTitle")
 const newsUrlInput = document.querySelector("#articleUrl")
@@ -23,7 +23,7 @@ const newsEvents = {
         })
     },
     addSaveEventListener() {
-        saveButton.addEventListener("click", () => {
+        newsSaveButton.addEventListener("click", () => {
             newsOutputSection.innerHTML = ""
             const newArticle = {
                 "userId": currentUserId,
@@ -47,15 +47,25 @@ const newsEvents = {
         })
     },
     addCancelEventListener() {
-        cancelButton.addEventListener("click", () => {
+        newsCancelButton.addEventListener("click", () => {
             newsUrlInput.value = ""
             newsTitleInput.value = ""
             newsSynopsisInput.value = ""
 
             const visToggle = document.querySelectorAll(".visToggle")
             const toggleArray = Array.from(visToggle)
-            
+
             toggleArray.forEach(item => item.classList.toggle("hidden"))
+        })
+    },
+    addOutputButtonListeners() {
+        newsOutputSection.addEventListener("click", event => {
+            if (event.target.id.startsWith("articleDelBtn--")) {
+                const articleToDelete = event.target.id.split("--")[1]
+                API.deleteNewsArticle(articleToDelete)
+                .then(API.getNewsArticles)
+                .then(renderNewsArticles)
+            }
         })
     }
 }
