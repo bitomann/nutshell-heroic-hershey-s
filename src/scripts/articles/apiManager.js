@@ -14,6 +14,12 @@ const API = {
             },
             body: JSON.stringify(newArticle)
         })
+    },
+    deleteNewsArticle(interestId) {
+        return fetch(`${baseURL}/articles/${interestId}`, {
+            method: "DELETE"
+        })
+        .then(response => response.json())
     }
 }
 

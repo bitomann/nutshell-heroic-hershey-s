@@ -16,6 +16,7 @@ sessionStorage.setItem("activeUser", 1)
 API.getNewsArticles().then(renderNewsArticles)
 newsEvents.addSaveEventListener()
 newsEvents.addNewArticleEventListener()
+newsEvents.addCancelEventListener()
 //Matt Reeds - getting the events data, rendering to dom, and calling the event listeners on the events buttons
 //events section tools - Matt Reeds
 apiActions.getEvents()

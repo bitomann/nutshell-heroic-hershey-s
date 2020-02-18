@@ -6,6 +6,8 @@ const makeNewsComponent = (newsArticle) => {
     <p>${newsArticle.title}</p>
     <p>${newsArticle.synopsis}</p>
     <p>${newsArticle.url}</p>
+    <button id="articleDelBtn--${newsArticle.id}</button>
+    <button id="articleEditBtn--${newsArticle.id}</button>
     <hr>
     </div>
     `

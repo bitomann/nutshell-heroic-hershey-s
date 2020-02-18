@@ -20,12 +20,6 @@ const newsEvents = {
 
             toggleArray.forEach(item => item.classList.toggle("hidden"))
 
-            cancelButton.addEventListener("click", () => {
-                newsUrlInput.value = ""
-                newsTitleInput.value = ""
-                newsSynopsisInput.value = ""
-                toggleArray.forEach(item => item.classList.toggle("hidden"))
-            })
         })
     },
     addSaveEventListener() {
@@ -50,6 +44,18 @@ const newsEvents = {
 
             toggleArray.forEach(item => item.classList.toggle("hidden"))
 
+        })
+    },
+    addCancelEventListener() {
+        cancelButton.addEventListener("click", () => {
+            newsUrlInput.value = ""
+            newsTitleInput.value = ""
+            newsSynopsisInput.value = ""
+
+            const visToggle = document.querySelectorAll(".visToggle")
+            const toggleArray = Array.from(visToggle)
+            
+            toggleArray.forEach(item => item.classList.toggle("hidden"))
         })
     }
 }
