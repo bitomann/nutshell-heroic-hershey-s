@@ -31,18 +31,16 @@ import taskEvents from "./tasks/tasksEventListeners.js"
 taskEvents.renderAllTasks()
 
 // messages - Bito
-import events from './messages/eventListeners.js'
-import Api from './messages/Api.js'
-import renderMessages from './messages/renderDom.js'
-import messageComponents from './messages/components.js'
+import renderMessages from './messages/renderMessages.js'
+import events from './messages/events.js'
+import messageComponentsToDom from './messages/messageComponents.js'
+import data from './messages/data.js';
 
-Api.getAllMessages()
+messageComponentsToDom.messageFormComponent();
+
+data.getAllMessages()
     .then((data) => {
-        renderEntries(data)
-        events.newMessageEntryEvent()
+        renderMessages(data)
+        events.messageEventListener()
     })
-
-
-renderMessages()
-messageComponents.messageInputForm()
-messageComponents.printedMessageComponent()
+events.editEventListener();
