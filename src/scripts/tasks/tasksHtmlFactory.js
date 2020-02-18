@@ -3,8 +3,11 @@
 const createTaskEntry = (entries) => {
 return `
     <div class="entry entry--${entries.id}">
-    <section>${entries.name}</section>
-    <section>${entries.completionDate}</section>
+    <p>${entries.name}</p>
+    <br>
+    <p>Complete By:</p>
+    <p>${entries.completionDate}</p>
+    <hr>
  </div>
 `
 }
