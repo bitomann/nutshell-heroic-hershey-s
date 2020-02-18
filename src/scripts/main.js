@@ -26,3 +26,5 @@ saveEventButton.saveEventFunction()
 //tasks section tools - Cooper Nichols
 taskEvents.renderAllTasks()
 taskEvents.createTask()
+taskEvents.addNewTask()
+taskEvents.cancelNewTask()
