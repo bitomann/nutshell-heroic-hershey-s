@@ -18,7 +18,7 @@ export default {
                 },
                 body: JSON.stringify(newMessage)
             })
-            .then(newMsg => newMsg.json())
+            .then(newMsg => newMessage.json())
     },
     editMessage: (editedMessage) => {
         return fetch(`${baseUrl}/messages/${editedEntry.id}`, {

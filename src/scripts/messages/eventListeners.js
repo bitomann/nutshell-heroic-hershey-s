@@ -1,7 +1,10 @@
-import Api  from './Api'
+import Api  from './Api.js'
+import renderMessages from './renderDom.js'
 
 // vvv Targets 'messages' container on DOM vvv //
 const messages = document.querySelector("#messages")
+
+const events = {
 // vvv targets 'submitButton' vvv //
 newMessageEntryEvent: () => {
     const submitButton = document.querySelector("#submitButton");
@@ -23,11 +26,14 @@ newMessageEntryEvent: () => {
                 .then(Api.getAllMessages)
                 .then(renderMessages)
         } else {
-            Api.addJournalEntry(entry)
-                .then(data.getAllJournalEntries)
-                .then(renderEntries)
+            Api.addNewMessage(message)
+                .then(Api.getAllMessages)
+                .then(renderMessages)
         }
         // vvv outside of scope this won't work; have to use "events".
         events.clearForm();
     });
+    }
 }
+
+export default events

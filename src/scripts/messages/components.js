@@ -1,4 +1,4 @@
-export default {
+ const messageComponents = {
     messageInputForm() {
         `
     <form action="">
@@ -24,3 +24,5 @@ export default {
         `
     }
 }
+
+export default messageComponents
