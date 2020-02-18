@@ -34,28 +34,21 @@ const saveEventButton = {
                 date: eventDate,
                 location: eventLocation
             }
-
-            apiActions.saveEventEntry(eventEntryObject)
-                .then(() => {
-                    apiActions.getEvents()
-                        .then(domOperations.renderEventEntries)
-                        .then(clearForm)
-                })
+            if (entryId.value !== "") {
+                eventEntry.id = parseInt(entryId.value);
+                apiActions.updateEventEntry(event)
+                    .then(apiActions.getEvents)
+                    .then(domOperations.renderEventEntries)
+                    .then(clearForm)
+            } else {
+                apiActions.saveEventEntry(eventEntryObject)
+                    .then(() => {
+                        apiActions.getEvents()
+                            .then(domOperations.renderEventEntries)
+                            .then(clearForm)
+                    })
+            }
         })
     }
 }
-if (entryIdInput.value !== "") {
-    entry.id = parseInt(entryIdInput.value);
-    apiActions.updateEntry(entry)
-        .then(apiActions.getEntries)
-        .then(domOperations.renderJournalEntries)
-        .then(clearForm)
-} else {
-    apiActions.saveJournalEntry(journalEntryObject)
-        .then(() => {
-            apiActions.getEntries()
-                .then(domOperations.renderJournalEntries)
-                .then(clearForm)
-        })
-};
 export default saveEventButton

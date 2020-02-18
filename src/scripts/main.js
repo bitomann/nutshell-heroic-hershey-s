@@ -6,6 +6,7 @@ import domOperations from "./events/eventsDomHandler.js";
 import newEventButton from "./events/eventFormListener.js";
 import saveEventButton from "./events/saveEventListener.js"
 import taskEvents from "./tasks/tasksEventListeners.js"
+import deleteBtn from "./events/updateEvents.js"
 
 /*
     Import all the tools into main.js that are needed to display
@@ -23,6 +24,7 @@ apiActions.getEvents()
 .then(domOperations.renderEventEntries);
 newEventButton.eventButtonFunction()
 saveEventButton.saveEventFunction()
+deleteBtn.eventDeleteListener()
 //tasks section tools - Cooper Nichols
 taskEvents.renderAllTasks()
 taskEvents.createTask()

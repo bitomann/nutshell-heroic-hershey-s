@@ -7,6 +7,8 @@ const eventComponentObj = {
             <h1>${eventEntry.eventName}</h1>
             <section>${eventEntry.date}</section>
             <section>${eventEntry.location}</section>
+            <button id="editEvent--${eventEntry.id}">Edit Event</button>
+            <button id="deleteEvent--${eventEntry.id}">Delete Event</button>
         `
     }
 }
