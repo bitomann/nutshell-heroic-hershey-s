@@ -1,6 +1,5 @@
 import data from './data.js'
 import renderMessages from './renderMessages.js'
-// import searchManager from './searchManager.js'
 
 
 const messageList = document.querySelector("#messages")
@@ -16,7 +15,7 @@ const events = {
     messageEventListener: () => {
 
         const submitButton = document.querySelector("#submitBtn");
-        const hiddenInput = document.querySelector("#messageId")
+        // const hiddenInput = document.querySelector("#messageId")
         submitButton.addEventListener("click", (event) => {
             const messageInput = document.querySelector("#messageInput");
 
@@ -24,9 +23,9 @@ const events = {
                 message: messageInput.value
             };
             // vvv needs hidden Id to be cleared in order to add new message vvv //
-            if (hiddenInput.value !== "") {
-                message.id = parseInt(hiddenInput.value);
-                hiddenInput.value = ""
+            if (messageId.value !== "") {
+                message.id = parseInt(messageId.value);
+                messageId.value = ""
                 data.editMessage(message)
                     .then(data.getAllMessages)
                     .then(renderMessages)
