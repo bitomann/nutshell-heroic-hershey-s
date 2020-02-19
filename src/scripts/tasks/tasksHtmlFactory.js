@@ -1,14 +1,16 @@
 // HTML component for task section -- Cooper Nichols
 
-const createTaskEntry = (entries) => {
-return `
-    <div class="entry entry--${entries.id}">
-    <p>${entries.name}</p>
+const createTaskEntry = (entry) => {
+    return `
+    <div class="entry entry--${entry.id}">
+    <p>${entry.name}</p>
     <br>
     <p>Complete By:</p>
-    <p>${entries.completionDate}</p>
+    <p>${entry.completionDate}</p>
+    <input type="checkbox" id="completeTask--${entry.id}" name="completeTask">
+    <label for="completeTask">Done</label>
     <hr>
- </div>
+    </div>
 `
 }
 
