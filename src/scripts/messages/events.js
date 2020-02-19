@@ -19,7 +19,8 @@ const events = {
             const messageInput = document.querySelector("#messageInput");
 
             const message = {
-                // vvv grabs user id from sessionStorage vvv //
+                // vvv grabs user id from sessionStorage. Needed to have parseInt
+                // vvv so userId will come up as integer vvv //
                 userId: parseInt(sessionStorage.getItem("activeUser")),
                 message: messageInput.value,
                 // vvv creates timestamp of now vvv //
