@@ -29,6 +29,12 @@ const saveEventButton = {
 
             const eventEntryObject = domOperations.eventEntryFactory(eventName, eventDate, eventLocation);
 
+/* Sort entries by date value and render to dom in that new order. 
+Loop through new array and use query selector on their class which
+grabs the first entry automatically and apply style to that. 
+get value of date input, parse date, sort entries, create new object to include date, 
+conditional to check if this object equals the other, display only if*/
+
             if (entryId.value !== "") {
                 eventEntryObject.id = parseInt(entryId.value);
                 apiActions.updateEventEntry(eventEntryObject)
