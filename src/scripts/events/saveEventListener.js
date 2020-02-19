@@ -38,7 +38,6 @@ const saveEventButton = {
             } else if (eventName === "" || eventDate === "" || eventLocation === "") {
                 apiActions.getEvents()
                     .then(domOperations.renderEventEntries)
-                    .then(clearForm)
                 alert("Please fill out the form.")
             } else {
                 apiActions.saveEventEntry(eventEntryObject)
