@@ -82,6 +82,10 @@ const taskEvents = {
         tasksContainer.addEventListener("click", event => {
             if (event.target.id.startsWith("editTask--")) {
                 const entryIdToEdit = event.target.id.split("--")[1]
+                const formToggle = document.querySelectorAll(".tasks_visToggle")
+                const formToggleArray = Array.from(formToggle)
+
+                formToggleArray.forEach(item => item.classList.toggle("tasks_hidden"))
                 updateFormFields(entryIdToEdit)
             }
         })
