@@ -1,3 +1,12 @@
+/* body {
+    background-image: url("./images/NUTSHELL_bg.jpg");
+    opacity: 85%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center top;
+    z-index: -1;
+} */
 /* styles for main container */
 #container {
     display: flex;
