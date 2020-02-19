@@ -15,6 +15,17 @@ const tasksAPI = {
       },
       body: JSON.stringify(entryObject)
    })
+    },
+    completeTaskEntry (id) {
+       return fetch(`${baseUrl}/${id}`, {
+          method: "PATCH",
+          headers: {
+             "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+             isComplete: true
+          })
+       })
     }
 }
 

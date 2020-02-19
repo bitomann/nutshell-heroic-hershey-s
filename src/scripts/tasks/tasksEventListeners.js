@@ -62,6 +62,19 @@ const taskEvents = {
 
             }
         })
+    },
+    completeTask() {
+        const tasksContainer = document.querySelector("#tasks_container")
+
+        tasksContainer.addEventListener("click", event => {
+            if (event.target.id.startsWith("completeTask--")) {
+                const checkBoxId = event.target.id.split("--")[1]
+
+                tasksAPI.completeTaskEntry(checkBoxId)
+                .then(tasksAPI.getTaskEntries)
+                .then(renderTasks)
+            }
+        })
     }
  
 }

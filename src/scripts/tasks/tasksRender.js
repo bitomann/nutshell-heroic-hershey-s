@@ -11,8 +11,10 @@ const addToDom = (html) => {
 const renderTasks = (tasksArray) => {
 tasksContainer.innerHTML = ""
 tasksArray.forEach(task => {
+    if (task.isComplete === false) {
     const renderedTask = createTaskEntry(task)
     addToDom(renderedTask)
+    }
 })
 }
 

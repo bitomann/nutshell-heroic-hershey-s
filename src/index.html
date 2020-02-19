@@ -48,7 +48,7 @@
                 <input type="text" name="articleSynopsis" id="articleSynopsis">
         </fieldset>
       </div>
-      
+
       <div id="newsOutputContainer">
       </div>
     </section>
@@ -56,18 +56,20 @@
     <div id="tasks">
       <button id="openTaskForm" class="tasks_visToggle">Add A New Task</button>
       <section id="tasks_forms" class="tasks_visToggle tasks_hidden">
-        <h3>New Task</h3>
-        <textarea id="task_description" rows="5" cols="30"></textarea>
-        <br>
-        <label for="task_completion_date" id="task_date_label">Complete by:</label>
-        <input type="date" name="task_completion_date" id="task_completion_date">
-        <br>
         <button id="tasks_save_button" value="save">Save</button>
         <button id="tasks_cancel_button" value="save">Cancel</button>
+        <fieldset>
+          <legend>Save A New Task</legend>
+          <textarea id="task_description" rows="5" cols="30"></textarea>
+          <br>
+          <label for="task_completion_date" id="task_date_label">Complete by:</label>
+          <input type="date" name="task_completion_date" id="task_completion_date">
+        </fieldset>
       </section>
       <h3>To-Do List</h3>
+      <hr>
       <section id="tasks_container">
-        
+
 
       </section>
 
