@@ -43,6 +43,7 @@ taskEvents.createTask()
 taskEvents.addNewTask()
 taskEvents.cancelNewTask()
 taskEvents.completeTask()
+taskEvents.editTask()
 
 // messages - Bito
 import renderMessages from './messages/renderMessages.js'
