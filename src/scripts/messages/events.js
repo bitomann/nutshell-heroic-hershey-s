@@ -15,15 +15,17 @@ const events = {
     messageEventListener: () => {
 
         const submitButton = document.querySelector("#submitBtn");
-        // const hiddenInput = document.querySelector("#messageId")
         submitButton.addEventListener("click", (event) => {
             const messageInput = document.querySelector("#messageInput");
 
             const message = {
-                userId: userId,
+                // vvv grabs user id from sessionStorage vvv //
+                userId: sessionStorage.getItem("activeUser"),
                 message: messageInput.value,
-                timestamp: timestamp
+                // vvv creates timestamp of now vvv //
+                timestamp: new Date()
             };
+            
             // vvv needs hidden Id ('messageId') to be cleared in order to add new message vvv //
             if (messageId.value !== "") {
                 message.id = parseInt(messageId.value);

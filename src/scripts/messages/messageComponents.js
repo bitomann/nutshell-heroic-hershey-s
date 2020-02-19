@@ -3,7 +3,9 @@ const messageComponentsToDom = {
     messageComponent(messageEntry) {
        
         return `
-    <section class="message--${messageEntry.id}>
+    <section class="message--${messageEntry.id}">
+        <p>User: ${messageEntry.user.username}</p>
+        <p>${messageEntry.timestamp}
         <aside class="message-entry">
         ${messageEntry.message}</aside>
 

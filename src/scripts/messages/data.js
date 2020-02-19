@@ -1,9 +1,11 @@
 const baseUrl = "http://localhost:8088"
 
+const currentUserId = parseInt(sessionStorage.getItem("activeUser"))
+
 export default {
     // vvv promises promises vvv //
     getAllMessages() {
-        return fetch(`${baseUrl}/messages`)
+        return fetch(`${baseUrl}/messages?_sort=timestamp&_expand=user`)
             .then(response => response.json());
     },
 
