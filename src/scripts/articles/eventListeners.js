@@ -6,7 +6,7 @@ const newsSaveButton = document.querySelector("#newsSave")
 const newArticleButton = document.querySelector("#openNewsForm")
 const newsCancelButton = document.querySelector("#closeNewsForm")
 const newsLegend = document.querySelector("#newsLegend")
-const newsEditSaveBtn = document.querySelector("#newsEditSave")
+const hiddenInput = document.querySelector("#newsHiddenInput")
 
 const newsTitleInput = document.querySelector("#articleTitle")
 const newsUrlInput = document.querySelector("#articleUrl")
@@ -14,18 +14,46 @@ const newsSynopsisInput = document.querySelector("#articleSynopsis")
 const newsOutputSection = document.querySelector("#newsOutputContainer")
 const currentUserId = parseInt(sessionStorage.getItem("activeUser"))
 
+const visToggleFunction = () => {
+    const visToggle = document.querySelectorAll(".visToggle")
+    const toggleArray = Array.from(visToggle)
+
+    toggleArray.forEach(item => item.classList.toggle("hidden"))
+}
+
+const editToggleFunction = () => {
+    const newsEditToggle = document.querySelectorAll(".newsEditToggle")
+    const newsEditToggleArray = Array.from(newsEditToggle)
+
+    newsEditToggleArray.forEach(item => item.classList.toggle("hidden"))
+}
+const clearInputFields = () => {
+    newsUrlInput.value = ""
+    newsTitleInput.value = ""
+    newsSynopsisInput.value = ""
+}
+
+const editSaveFunction = (editId) => {
+    API.updateNewsArticle(editId)
+        .then(API.getNewsArticles)
+        .then(renderNewsArticles)
+        .then(clearInputFields)
+        .then(editToggleFunction)
+    newsLegend.textContent = "Save a News Article"
+    newsSaveButton.textContent = "Save"
+    hiddenInput.value = ""
+}
+
 const newsEvents = {
     addNewArticleEventListener() {
         newArticleButton.addEventListener("click", () => {
-            const visToggle = document.querySelectorAll(".visToggle")
-            const toggleArray = Array.from(visToggle)
-
-            toggleArray.forEach(item => item.classList.toggle("hidden"))
-
+            visToggleFunction()
         })
     },
     addSaveEventListener() {
         newsSaveButton.addEventListener("click", () => {
+            if (hiddenInput.value === "") {
+                
             newsOutputSection.innerHTML = ""
             const newArticle = {
                 "userId": currentUserId,
@@ -37,28 +65,21 @@ const newsEvents = {
             API.saveNewsArticle(newArticle)
                 .then(API.getNewsArticles).then(renderNewsArticles)
 
-            newsUrlInput.value = ""
-            newsTitleInput.value = ""
-            newsSynopsisInput.value = ""
+            clearInputFields()
 
-            const visToggle = document.querySelectorAll(".visToggle")
-            const toggleArray = Array.from(visToggle)
-
-            toggleArray.forEach(item => item.classList.toggle("hidden"))
-
+            visToggleFunction()
+        } else {
+            editSaveFunction(hiddenInput.value)
+        }
+            
         })
     },
     addCancelEventListener() {
         newsCancelButton.addEventListener("click", () => {
-            newsUrlInput.value = ""
-            newsTitleInput.value = ""
-            newsSynopsisInput.value = ""
-
-            const visToggle = document.querySelectorAll(".visToggle")
-            const toggleArray = Array.from(visToggle)
-
-            toggleArray.forEach(item => item.classList.toggle("hidden"))
+            clearInputFields()
+            visToggleFunction()
             newsLegend.textContent = "Save a News Article"
+            newsSaveButton.textContent = "Save"
         })
     },
     addOutputButtonListeners() {
@@ -71,30 +92,12 @@ const newsEvents = {
             }
             if (event.target.id.startsWith("articleEditBtn--")) {
                 const articleToEdit = event.target.id.split("--")[1]
-                const newsEditToggle = document.querySelectorAll(".newsEditToggle")
-                const newsEditToggleArray = Array.from(newsEditToggle)
-                
+                editToggleFunction()
                 newsLegend.textContent = "Edit a News Article"
-                newsEditToggleArray.forEach(item => item.classList.toggle("hidden"))
+                newsSaveButton.textContent = "Update"
 
                 API.editNewsArticle(articleToEdit)
             }
-        })
-    },
-    addEditSaveButtonEventListener() {
-        newsEditSaveBtn.addEventListener("click", () => {
-            const articleToEdit = event.target.id.split("--")[1]
-            const newsEditToggle = document.querySelectorAll(".newsEditToggle")
-            const newsEditToggleArray = Array.from(newsEditToggle)
-
-            API.updateNewsArticle(articleToEdit)
-                .then(API.getNewsArticles)
-                .then(renderNewsArticles)
-            newsEditToggleArray.forEach(item => item.classList.toggle("hidden"))
-            newsUrlInput.value = ""
-            newsTitleInput.value = ""
-            newsSynopsisInput.value = ""
-            newsLegend.textContent = "Save a News Article"
         })
     }
 }

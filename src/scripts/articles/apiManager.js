@@ -24,6 +24,7 @@ const API = {
         .then(response => response.json())
     },
     editNewsArticle(articleId) {
+        const hiddenInput = document.querySelector("#newsHiddenInput")
         const urlInput = document.querySelector("#articleUrl")
         const titleInput = document.querySelector("#articleTitle")
         const synopsisInput = document.querySelector("#articleSynopsis")
@@ -31,6 +32,7 @@ const API = {
         fetch(`${baseURL}/articles/${articleId}`)
             .then(response => response.json())
             .then(article => {
+                hiddenInput.value = article.id
                 urlInput.value = article.url
                 titleInput.value = article.title
                 synopsisInput.value = article.synopsis

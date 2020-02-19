@@ -26,17 +26,18 @@
       <div id="events-container">
       </div>
     </div>
+
     <section id="newsContainer">
       <div id="newsHeader">
         <button id="openNewsForm" class="visToggle newsEditToggle">Add a New Article</button>
-        <button id="newsSave" class="visToggle hidden">Save</button>
-        <button id="newsEditSave" class="newsEditToggle hidden">Save</button>
+        <button id="newsSave" class="visToggle newsEditToggle hidden">Save</button>
         <button id="closeNewsForm" class="visToggle newsEditToggle hidden">Cancel</button>
       </div>
 
       <div class="visToggle newsEditToggle hidden" id="newsInputContainer">
         <fieldset>
           <legend id="newsLegend">Save a News Article</legend>
+          <input type="hidden" id="newsHiddenInput" value="" />
           <label for="articleTitle">Title of Article</lable>
             <input type="text" name="articleTitle" id="articleTitle">
 
