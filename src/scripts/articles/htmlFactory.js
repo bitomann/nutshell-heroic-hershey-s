@@ -3,12 +3,10 @@
 const makeNewsComponent = (newsArticle) => {
     return `
     <div class="article">
-    <p>${newsArticle.title}</p>
+    <p><a href="${newsArticle.url}">${newsArticle.title}</a></p>
     <p>${newsArticle.synopsis}</p>
-    <p>${newsArticle.url}</p>
     <button id="articleDelBtn--${newsArticle.id}">Delete</button>
     <button id="articleEditBtn--${newsArticle.id}">Edit</button>
-    <hr>
     </div>
     `
 }
