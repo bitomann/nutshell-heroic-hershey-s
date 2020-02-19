@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* body {
     background-image: url("./images/NUTSHELL_bg.jpg");
     opacity: 85%;
@@ -8,14 +7,12 @@
     background-position: center top;
     z-index: -1;
 } */
-=======
 /* styles for main container */
 #container {
     display: flex;
     flex-direction: row;
 }
 
->>>>>>> master
 /* styles for news div */
 .hidden {
     display: none;
@@ -50,12 +47,9 @@
 .article {
     margin: 4%;
 }
-<<<<<<< HEAD
-=======
 
 /* styles for tasks div -- Cooper Nichols */
 
 .tasks_hidden {
     display: none;
 }
->>>>>>> master
