@@ -26,6 +26,11 @@
     margin: 2%;
 }
 
+#newsOutputContainer {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 #newsSave {
     margin: 2%;
 }
