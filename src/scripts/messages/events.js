@@ -20,7 +20,9 @@ const events = {
             const messageInput = document.querySelector("#messageInput");
 
             const message = {
-                message: messageInput.value
+                userId: userId,
+                message: messageInput.value,
+                timestamp: timestamp
             };
             // vvv needs hidden Id ('messageId') to be cleared in order to add new message vvv //
             if (messageId.value !== "") {
