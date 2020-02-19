@@ -20,7 +20,7 @@ const events = {
 
             const message = {
                 // vvv grabs user id from sessionStorage vvv //
-                userId: sessionStorage.getItem("activeUser"),
+                userId: parseInt(sessionStorage.getItem("activeUser")),
                 message: messageInput.value,
                 // vvv creates timestamp of now vvv //
                 timestamp: new Date()
