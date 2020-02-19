@@ -9,10 +9,7 @@ const currentDate = new Date();
 const date = currentDate.getDate();
 const month = currentDate.getMonth();
 const year = currentDate.getFullYear();
-const dateString = year + "-" + (month + 1) + "-" + date;
-console.log(Date.parse(dateString))
-console.log(Date.parse("2020-1-20"))
-console.log(Date.parse("2020-3-20"))
+let dateString = year + "-" + (month + 1) + "-" + date;
 
 /* Sort entries by date value and render to dom in that new order. 
 Loop through new array and use query selector on their class which
@@ -22,31 +19,26 @@ conditional to check if this object equals the other, display only if*/
 
 const domOperations = {
     eventEntryFactory: (eventName, date, location) => {
+        let userDate = Date.parse(date);
+        
         let newEventObject = {
             eventName: eventName,
             date: date,
-            location: location
+            location: location,
+            parsedDate: userDate
         }
-        const userDate = Date.parse(date);
-
-
-
+        
         return newEventObject;
     },
 
     renderEventEntries: (entries) => {
-        const newArray = entries.reverse();
-        const sortedArray = newArray.sort((dateString, date) => dateString - date)
         entryContainer.innerHTML = "";
-        sortedArray.forEach(entry => {
+        entries.sort(function(a, b) {
+            return a.parsedDate - b.parsedDate
+        })
+        entries.forEach(entry => {
             entryContainer.innerHTML +=
                 eventComponentObj.eventCardComponent(entry);
-            // add a conditional statement that applies the required styling to upcoming event
-        })
-    },
-    comparingDates: (dates) => {
-        dates.forEach(date => {
-            Date.parse(date)
         })
     }
 }
