@@ -22,7 +22,7 @@ const events = {
             const message = {
                 message: messageInput.value
             };
-            // vvv needs hidden Id to be cleared in order to add new message vvv //
+            // vvv needs hidden Id ('messageId') to be cleared in order to add new message vvv //
             if (messageId.value !== "") {
                 message.id = parseInt(messageId.value);
                 messageId.value = ""
