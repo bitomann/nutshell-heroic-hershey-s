@@ -1,3 +1,4 @@
+// Matt Reeds - Conditional statements to determine whether to edit or delete entry
 import apiActions from "./eventsDataHandler.js"
 import domOperations from "./eventsDomHandler.js"
 
