@@ -1,12 +1,12 @@
 # Nutshell: The Information Dashboard
 
-## Setup: Follow these steps to begin set-up
+## Setup: Follow these steps exactly
 
 1. Clone this repository
-2. `cd` into the directory it creates
-3. Make a `database.json` file in the `api` directory
-4. `cd` into the `src` directory
-15. Run `hs -o .` to verify everything works
+1. `cd` into the directory it creates
+1. Make a `database.json` file in the `api` directory
+1. `cd` into the `src` directory
+1. Run `hs -o .` to verify everything works
 
 ## Instructions
 
@@ -31,59 +31,45 @@ To start you off, here's an example of what the resources in your API should loo
 ### Users
 
 ```json
-    { 
-    "id": 1, 
-    "username": "Steve", 
-    "email": "me@me.com" 
-    }
+{ "id": 1, "username": "Steve", "email": "me@me.com" }
 ```
 
 ### Messages
 
 ```json
-    { 
-    "id": 1, 
-    "userId": 1, 
-    "message": "What's up?" 
-    }
+{ "id": 1, "userId": 1, "message": "What's up?" }
 ```
 
 ### News
 
 ```json
-    {
+{
     "id": 1,
     "userId": 2,
     "url": "https://www.quantamagazine.org/newfound-wormhole-allows-information-to-escape-black-holes-20171023/",
     "title": "Wormholes Allow Information to Escape Black Holes",
     "synopsis": "Check out this recent discovery about workholes"
-    }
+}
 ```
 
 ### Friends
 
 ```json
-    { 
-    "id": 1, 
-    "userId": 1, 
-    "loggedInUserId": 3 
-    }
+{ "id": 1, "userId": 1, "loggedInUserId": 3 }
 ```
 
 ### Tasks
 
 ```json
-    { 
-    "id": 1, 
-    "userId": 3, 
-    "task": "Take out garbage" 
-    }
+{ "id": 1, "userId": 3, "task": "Take out garbage" }
 ```
 
-## ERD Relationships
+## Professional Requirements
 
-
-
+1. All teammates must be using Webpack to compile their code.
+1. Each module should have a comment at the top with the following info: author(s) and purpose of module
+1. The README for your project should include instructions on how another person can download and run the application
+1. An ERD showing the database relationships. A screenshot/image should be included on your README.
 
 ## How to Handle Authentication
 
