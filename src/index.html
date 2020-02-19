@@ -26,16 +26,18 @@
       <div id="events-container">
       </div>
     </div>
+
     <section id="newsContainer">
       <div id="newsHeader">
-        <button id="openNewsForm" class="visToggle">Add a New Article</button>
-        <button id="newsSave" class="visToggle hidden">Save</button>
-        <button id="closeNewsForm" class="visToggle hidden">Cancel</button>
+        <button id="openNewsForm" class="visToggle newsEditToggle">Add a New Article</button>
+        <button id="newsSave" class="visToggle newsEditToggle hidden">Save</button>
+        <button id="closeNewsForm" class="visToggle newsEditToggle hidden">Cancel</button>
       </div>
 
-      <div class="visToggle hidden" id="newsInputContainer">
+      <div class="visToggle newsEditToggle hidden" id="newsInputContainer">
         <fieldset>
-          <legend>Save a News Article</legend>
+          <legend id="newsLegend">Save a News Article</legend>
+          <input type="hidden" id="newsHiddenInput" value="" />
           <label for="articleTitle">Title of Article</lable>
             <input type="text" name="articleTitle" id="articleTitle">
 
@@ -46,7 +48,7 @@
                 <input type="text" name="articleSynopsis" id="articleSynopsis">
         </fieldset>
       </div>
-      
+
       <div id="newsOutputContainer">
       </div>
     </section>
@@ -54,18 +56,20 @@
     <div id="tasks">
       <button id="openTaskForm" class="tasks_visToggle">Add A New Task</button>
       <section id="tasks_forms" class="tasks_visToggle tasks_hidden">
-        <h3>New Task</h3>
-        <textarea id="task_description" rows="5" cols="30"></textarea>
-        <br>
-        <label for="task_completion_date" id="task_date_label">Complete by:</label>
-        <input type="date" name="task_completion_date" id="task_completion_date">
-        <br>
         <button id="tasks_save_button" value="save">Save</button>
         <button id="tasks_cancel_button" value="save">Cancel</button>
+        <fieldset>
+          <legend>Save A New Task</legend>
+          <textarea id="task_description" rows="5" cols="30"></textarea>
+          <br>
+          <label for="task_completion_date" id="task_date_label">Complete by:</label>
+          <input type="date" name="task_completion_date" id="task_completion_date">
+        </fieldset>
       </section>
       <h3>To-Do List</h3>
+      <hr>
       <section id="tasks_container">
-        
+
 
       </section>
 

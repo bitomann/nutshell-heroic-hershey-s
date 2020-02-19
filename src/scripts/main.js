@@ -13,11 +13,19 @@ import deleteBtn from "./events/editAndDelete.js"
     the initial UI to the user. Either the login form should appear
     or the dashboard should be rendered.
 */
+
+
 sessionStorage.setItem("activeUser", 1)
+
+
 //news section tools - Katie Wohl
-API.getNewsArticles().then(renderNewsArticles)
+API.getNewsArticles().then(renderNewsArticles).then(newsEvents.addOutputButtonListeners)
 newsEvents.addSaveEventListener()
 newsEvents.addNewArticleEventListener()
+newsEvents.addCancelEventListener()
+
+
+//Matt Reeds - getting the events data, rendering to dom, and calling the event listeners on the events buttons
 //getting the events data, rendering to dom, and calling the event listeners on the events buttons
 //events section tools - Matt Reeds
 apiActions.getEvents()
@@ -25,6 +33,8 @@ apiActions.getEvents()
 newEventButton.eventButtonFunction()
 saveEventButton.saveEventFunction()
 deleteBtn.eventDeleteListener()
+
+
 //tasks section tools - Cooper Nichols
 // import taskEvents from "./tasks/tasksEventListeners.js"
 taskEvents.renderAllTasks()
@@ -32,6 +42,7 @@ taskEvents.renderAllTasks()
 taskEvents.createTask()
 taskEvents.addNewTask()
 taskEvents.cancelNewTask()
+taskEvents.completeTask()
 
 // messages - Bito
 import renderMessages from './messages/renderMessages.js'
