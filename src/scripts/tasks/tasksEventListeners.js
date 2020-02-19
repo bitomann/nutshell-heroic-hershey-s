@@ -46,8 +46,12 @@ const taskEvents = {
     },
     createTask() {
         taskSave.addEventListener("click", event => {
-            const createNewTask = createNewTaskFactory(taskDescription.value, taskDate.value)
-            if (taskDescription.value !== "" && taskDate.value !== "") {
+            const hiddenId = document.querySelector("#tasks_hiddenInput")
+            if (hiddenId.value !== "") {
+                tasksAPI.editTaskEntry(hiddenId.value)
+            }
+             else if (hiddenId.value === "" && taskDescription.value !== "" && taskDate.value !== "") {
+                const createNewTask = createNewTaskFactory(taskDescription.value, taskDate.value)
                 tasksAPI.saveTaskEntry(createNewTask)
                     .then(() => {
                         tasksAPI.getTaskEntries()
@@ -72,8 +76,8 @@ const taskEvents = {
                 const checkBoxId = event.target.id.split("--")[1]
 
                 tasksAPI.completeTaskEntry(checkBoxId)
-                .then(tasksAPI.getTaskEntries)
-                .then(renderTasks)
+                    .then(tasksAPI.getTaskEntries)
+                    .then(renderTasks)
             }
         })
     },
@@ -90,7 +94,7 @@ const taskEvents = {
             }
         })
     }
- 
+
 }
 
 export default taskEvents
