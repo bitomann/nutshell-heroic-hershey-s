@@ -6,12 +6,14 @@ const newsSaveButton = document.querySelector("#newsSave")
 const newArticleButton = document.querySelector("#openNewsForm")
 const newsCancelButton = document.querySelector("#closeNewsForm")
 const newsLegend = document.querySelector("#newsLegend")
-const hiddenInput = document.querySelector("#newsHiddenInput")
 
+const hiddenInput = document.querySelector("#newsHiddenInput")
 const newsTitleInput = document.querySelector("#articleTitle")
 const newsUrlInput = document.querySelector("#articleUrl")
 const newsSynopsisInput = document.querySelector("#articleSynopsis")
+
 const newsOutputSection = document.querySelector("#newsOutputContainer")
+let newsDate = new Date()
 const currentUserId = parseInt(sessionStorage.getItem("activeUser"))
 
 const visToggleFunction = () => {
@@ -60,7 +62,7 @@ const newsEvents = {
                 "url": newsUrlInput.value,
                 "title": newsTitleInput.value,
                 "synopsis": newsSynopsisInput.value,
-                "timestamp": ""
+                "timestamp": newsDate.getTime()
             }
             API.saveNewsArticle(newArticle)
                 .then(API.getNewsArticles).then(renderNewsArticles)

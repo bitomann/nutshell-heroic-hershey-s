@@ -42,13 +42,14 @@ const API = {
         const urlInput = document.querySelector("#articleUrl")
         const titleInput = document.querySelector("#articleTitle")
         const synopsisInput = document.querySelector("#articleSynopsis")
+        const newTimestamp = new Date()
 
         const updatedNewsObject = {
             'userId': currentUserId,
             'url': urlInput.value,
             'title': titleInput.value,
             'synopsis': synopsisInput.value,
-            'timestamp': ""
+            'timestamp': newTimestamp.getTime()
             }
         return fetch(`${baseURL}/articles/${articleId}`, {
             method: "PUT",
