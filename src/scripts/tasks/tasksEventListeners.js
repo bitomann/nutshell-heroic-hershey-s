@@ -49,8 +49,17 @@ const taskEvents = {
             const hiddenId = document.querySelector("#tasks_hiddenInput")
             if (hiddenId.value !== "") {
                 tasksAPI.editTaskEntry(hiddenId.value)
+                    .then(() => {
+                        tasksAPI.getTaskEntries()
+                            .then(renderTasks)
+                    })
+                const formToggle = document.querySelectorAll(".tasks_visToggle")
+                const formToggleArray = Array.from(formToggle)
+
+                formToggleArray.forEach(item => item.classList.toggle("tasks_hidden"))
+
             }
-             else if (hiddenId.value === "" && taskDescription.value !== "" && taskDate.value !== "") {
+            else if (hiddenId.value === "" && taskDescription.value !== "" && taskDate.value !== "") {
                 const createNewTask = createNewTaskFactory(taskDescription.value, taskDate.value)
                 tasksAPI.saveTaskEntry(createNewTask)
                     .then(() => {
