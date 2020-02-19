@@ -23,13 +23,13 @@ export default {
             .then(response => response.json())
     },
 
-    editMessage: (edit) => {
-        return fetch(`${baseUrl}/messages/${edit.id}`, {
+    editMessage: (editedMessage) => {
+        return fetch(`${baseUrl}/messages/${editedMessage.id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(edit)
+                body: JSON.stringify(editedMessage)
             })
             .then(response => response.json())
     },

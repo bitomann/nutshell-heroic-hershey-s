@@ -46,4 +46,4 @@ data.getAllMessages()
         renderMessages(data)
         events.messageEventListener()
     })
-events.editEventListener();
+events.editDeleteEventListener();

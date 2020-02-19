@@ -16,17 +16,17 @@ const events = {
     messageEventListener: () => {
 
         const submitButton = document.querySelector("#submitBtn");
-
+        const hiddenInput = document.querySelector("#messageId")
         submitButton.addEventListener("click", (event) => {
-            event.preventDefault()
             const messageInput = document.querySelector("#messageInput");
 
             const message = {
                 message: messageInput.value
             };
-
-            if (messageInput.value !== "") {
-                message.id = parseInt(messageInput.value);
+            // vvv needs hidden Id to be cleared in order to add new message vvv //
+            if (hiddenInput.value !== "") {
+                message.id = parseInt(hiddenInput.value);
+                hiddenInput.value = ""
                 data.editMessage(message)
                     .then(data.getAllMessages)
                     .then(renderMessages)
@@ -39,7 +39,7 @@ const events = {
         });
     },
 
-    editEventListener: () => {
+    editDeleteEventListener: () => {
 
         messageList.addEventListener("click", (event) => {
             // vvv DELETE vvv //
@@ -55,7 +55,7 @@ const events = {
             // vvv EDIT vvv //
             if (event.target.id.startsWith("editMessage--")) {
                 const messageToEdit = event.target.id.split("--")[1]
-                // entryList.innerHtml = ""
+                messageList.innerHtml = ""
                 data.getSingleMessage(messageToEdit)
                     .then(message => {
                         document.querySelector("#messageId").value = message.id

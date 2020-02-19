@@ -4,16 +4,12 @@ const messageComponentsToDom = {
        
         return `
     <section class="message--${messageEntry.id}>
-        <h4>
-        DATE: ${messageEntry.date}
-        </h4>
         <aside class="message-entry">
-         MESSAGE: ${messageEntry.message}</aside>
+        ${messageEntry.message}</aside>
+
     </section>
         <button id="deleteMessage--${messageEntry.id}">Delete</button>
         <button id="editMessage--${messageEntry.id}">Edit</button>
-        <br>
-        <br>
         <br>
         <br>
     `
@@ -23,18 +19,19 @@ const messageComponentsToDom = {
     messageFormComponent() {
         const entryLog = document.querySelector("#messageForm");
         entryLog.innerHTML = `
-    <form action="">
-    <input type="hidden" id="messageId" value="" />
+    <input type="hidden" id="messageId"/>
             <h1>Messages:</h1>
                 <label for="message">
-                <textarea name="message" id="messageInput" placeHolder="Type you message here.." 
+                <textarea name="message" id="messageInput" placeHolder="Type your message here.." 
                 id="message" cols="30" rows="1"></textarea>
-                
+            <section>  
                 <button id="submitBtn" value="submitMessage">
                 Submit
                 </button>
-    </form>
-                  `;
+            </section>
+    <br>
+    <br>
+    `;
     }
 }
 
