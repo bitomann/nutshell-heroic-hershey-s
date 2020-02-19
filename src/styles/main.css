@@ -10,20 +10,25 @@
 }
 
 #newsContainer {
-    max-width: 25%;
+    width: 25%;
     margin-left: 3%;
     margin-right: 3%;
 }
 
 #newsInputContainer {
     margin: 2%;
-    /* overflow: ; */
+    
 }
 
 #newsInputContainer input {
     display: flex;
     flex-direction: column;
     margin: 2%;
+}
+
+#newsOutputContainer {
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 #newsSave {
