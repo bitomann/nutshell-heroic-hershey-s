@@ -35,7 +35,7 @@ const saveEventButton = {
                     .then(apiActions.getEvents)
                     .then(domOperations.renderEventEntries)
                     .then(clearForm)
-            } else if (eventName || eventDate || eventLocation === "") {
+            } else if (eventName === "" || eventDate === "" || eventLocation === "") {
                 apiActions.getEvents()
                     .then(domOperations.renderEventEntries)
                     .then(clearForm)
