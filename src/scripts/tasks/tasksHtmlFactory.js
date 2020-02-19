@@ -9,6 +9,7 @@ const createTaskEntry = (entry) => {
     <p>${entry.completionDate}</p>
     <input type="checkbox" id="completeTask--${entry.id}" name="completeTask">
     <label for="completeTask">Done</label>
+    <button id="editTask--${entry.id}">Edit</button>
     <hr>
     </div>
 `

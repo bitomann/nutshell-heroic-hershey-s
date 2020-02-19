@@ -2,6 +2,7 @@
 
 import renderTasks from "./tasksRender.js"
 import tasksAPI from "./tasksApi.js"
+import updateFormFields from "./tasksUpdateFormFields.js"
 
 const taskSave = document.getElementById("tasks_save_button")
 const taskCancel = document.getElementById("tasks_cancel_button")
@@ -73,6 +74,15 @@ const taskEvents = {
                 tasksAPI.completeTaskEntry(checkBoxId)
                 .then(tasksAPI.getTaskEntries)
                 .then(renderTasks)
+            }
+        })
+    },
+    editTask() {
+        const tasksContainer = document.querySelector("#tasks_container")
+        tasksContainer.addEventListener("click", event => {
+            if (event.target.id.startsWith("editTask--")) {
+                const entryIdToEdit = event.target.id.split("--")[1]
+                updateFormFields(entryIdToEdit)
             }
         })
     }
