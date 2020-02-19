@@ -7,10 +7,29 @@
     background-position: center top;
     z-index: -1;
 } */
-/* styles for main container */
+
+
+/* styles for main page */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #container {
     display: flex;
     flex-direction: row;
+}
+/* styles for messages div */
+#messagesContainer {
+    width: 22%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+/* styles for events div */
+#events {
+    width: 22%;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 /* styles for news div */
@@ -19,7 +38,7 @@
 }
 
 #newsContainer {
-    width: 25%;
+    width: 22%;
     margin-left: 3%;
     margin-right: 3%;
 }
@@ -49,6 +68,11 @@
 }
 
 /* styles for tasks div -- Cooper Nichols */
+#tasks {
+    width: 22%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
 
 .tasks_hidden {
     display: none;
