@@ -20,15 +20,17 @@ const events = {
 
             const message = {
                 // vvv grabs user id from sessionStorage. Needed to have parseInt
-                // vvv so userId will come up as integer vvv //
+                // vvv so userId will come up as integer //
                 userId: parseInt(sessionStorage.getItem("activeUser")),
                 message: messageInput.value,
                 // vvv creates timestamp of now vvv //
                 timestamp: new Date()
             };
-            
+            if (messageInput.value === "") {
+                window.alert("You didn't type a message silly🤪")
+            }
             // vvv needs hidden Id ('messageId') to be cleared in order to add new message vvv //
-            if (messageId.value !== "") {
+            else if (messageId.value !== "") {
                 message.id = parseInt(messageId.value);
                 messageId.value = ""
                 data.editMessage(message)
