@@ -19,6 +19,7 @@
 Nutshell is a dashboard for people to use to organize their daily tasks, events, news article, friends, and chat messages.
 
 ### Messaging
+A user can send a public message by typing into the 'Messages' text area and then clicking on the 'Submit' button. Once a message has been created the user can edit and/or delete a message by clicking the appropriate button. 
 
 ### Events
 
