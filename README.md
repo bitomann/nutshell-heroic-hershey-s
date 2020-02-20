@@ -22,6 +22,8 @@ Nutshell is a dashboard for people to use to organize their daily tasks, events,
 
 ### Events
 
+A user can record upcoming events by clicking the "New Event" button and filling out the appropriate input fields. Once save is clicked the events are sorted in chronological order with the most upcoming event being the first in the list. That most upcoming entry is also highlighted with an individual background color, bold font and increased font size for readability. The user also has the option to edit their event by clicking on the accompanied event button and editing the prefilled fields. The user also has the option to delete their event entirely. 
+
 ### News Articles
 
 A user can save news articles to their personal dashboard by clicking 'Add New Article' and inputting the appropriate information in the input fields. Saved articles are populated with the most recently saved/edited article first. Any article entry can be edited or deleted by clicking the 'edit' or 'delete' button below each saved article.

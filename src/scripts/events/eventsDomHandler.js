@@ -33,12 +33,16 @@ const domOperations = {
 
     renderEventEntries: (entries) => {
         entryContainer.innerHTML = "";
-        entries.sort(function(a, b) {
+        const sortedEntries = entries.sort(function(a, b) {
             return a.parsedDate - b.parsedDate
         })
-        entries.forEach(entry => {
+        sortedEntries.forEach(entry => {
             entryContainer.innerHTML +=
-                eventComponentObj.eventCardComponent(entry);
+            eventComponentObj.eventCardComponent(entry);
+            document.querySelector(".eventEntry").style.fontWeight = "bold";
+            document.querySelector(".eventEntry").style.fontSize = "20px";
+            document.querySelector(".eventEntry").style.backgroundColor = "lightgrey";
+            document.querySelector(".eventEntry").style.padding = "10px";
         })
     }
 }
