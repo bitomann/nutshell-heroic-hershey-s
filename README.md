@@ -12,7 +12,7 @@
 
 ## ERD Relationships
 
-![nutshell ERD](./nutshellERD.png)
+![nutshell ERD](./Nutshell_ERD.png)
 
 ## Using the App
 
