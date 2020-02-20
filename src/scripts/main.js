@@ -38,12 +38,12 @@ deleteBtn.eventDeleteListener()
 //tasks section tools - Cooper Nichols
 // import taskEvents from "./tasks/tasksEventListeners.js"
 taskEvents.renderAllTasks()
-taskEvents.renderAllTasks()
 taskEvents.createTask()
 taskEvents.addNewTask()
 taskEvents.cancelNewTask()
 taskEvents.completeTask()
 taskEvents.editTask()
+taskEvents.deleteTask()
 
 // messages - Bito
 import renderMessages from './messages/renderMessages.js'

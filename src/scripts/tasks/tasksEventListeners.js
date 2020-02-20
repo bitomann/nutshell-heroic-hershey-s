@@ -2,7 +2,6 @@
 
 import renderTasks from "./tasksRender.js"
 import tasksAPI from "./tasksApi.js"
-import updateFormFields from "./tasksUpdateFormFields.js"
 
 const taskSave = document.getElementById("tasks_save_button")
 const taskCancel = document.getElementById("tasks_cancel_button")
@@ -75,6 +74,9 @@ const taskEvents = {
                 formToggleArray.forEach(item => item.classList.toggle("tasks_hidden"))
 
             }
+            else {
+                alert("Please enter a task and completion date.")
+            }
         })
     },
     completeTask() {
@@ -99,8 +101,21 @@ const taskEvents = {
                 const formToggleArray = Array.from(formToggle)
 
                 formToggleArray.forEach(item => item.classList.toggle("tasks_hidden"))
-                updateFormFields(entryIdToEdit)
+
+                tasksAPI.updateFormFields(entryIdToEdit)
             }
+        })
+    },
+    deleteTask() {
+        const tasksContainer = document.querySelector("#tasks_container")
+        tasksContainer.addEventListener("click", event => {
+            if (event.target.id.startsWith("deleteTask--")) {
+                const entryIdToDelete = event.target.id.split("--")[1]
+                tasksAPI.deleteTask(entryIdToDelete)
+                .then(tasksAPI.getTaskEntries)
+                .then(renderTasks)
+            }
+
         })
     }
 
