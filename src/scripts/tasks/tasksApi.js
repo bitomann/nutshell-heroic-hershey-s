@@ -29,6 +29,12 @@ const tasksAPI = {
           })
        })
     },
+    deleteTask(id) {
+      return fetch(`${baseUrl}/${id}`, {
+          method: "DELETE"
+      })
+      .then(response => response.json())
+  },
     editTaskEntry (id) {
          const updatedObject = {
             userId: currentUserId,
