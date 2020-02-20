@@ -75,6 +75,9 @@ const taskEvents = {
                 formToggleArray.forEach(item => item.classList.toggle("tasks_hidden"))
 
             }
+            else {
+                alert("Please enter a task and completion date.")
+            }
         })
     },
     completeTask() {
