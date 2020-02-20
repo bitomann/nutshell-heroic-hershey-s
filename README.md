@@ -27,3 +27,5 @@ Nutshell is a dashboard for people to use to organize their daily tasks, events,
 A user can save news articles to their personal dashboard by clicking 'Add New Article' and inputting the appropriate information in the input fields. Saved articles are populated with the most recently saved/edited article first. Any article entry can be edited or deleted by clicking the 'edit' or 'delete' button below each saved article.
 
 ### Tasks
+
+A user can save tasks to a to-do list by clicking "Add A New Task" and adding a description and an expected completion date to the respective forms that appear. Users have the ability to edit the name and date of tasks by clicking an "Edit" button located next to each task. They also can check a task as complete by clicking the "Done" checkbox. This will remove the task from their to-do list, but it will still persist in the database as a completed task. 
