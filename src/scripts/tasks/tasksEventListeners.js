@@ -102,7 +102,8 @@ const taskEvents = {
                 const formToggleArray = Array.from(formToggle)
 
                 formToggleArray.forEach(item => item.classList.toggle("tasks_hidden"))
-                updateFormFields(entryIdToEdit)
+                
+                tasksAPI.updateFormFields(entryIdToEdit)
             }
         })
     }
