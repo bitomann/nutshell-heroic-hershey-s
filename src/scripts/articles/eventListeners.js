@@ -56,7 +56,6 @@ const newsEvents = {
         newsSaveButton.addEventListener("click", () => {
             if (hiddenInput.value === "") {
                 
-            newsOutputSection.innerHTML = ""
             const newArticle = {
                 "userId": currentUserId,
                 "url": newsUrlInput.value,
@@ -64,15 +63,25 @@ const newsEvents = {
                 "synopsis": newsSynopsisInput.value,
                 "timestamp": newsDate.getTime()
             }
+
+            if (newsUrlInput.value === "" || newsTitleInput.value === "") {
+                window.alert("Please add more information")
+            } else {
+            newsOutputSection.innerHTML = ""
+
             API.saveNewsArticle(newArticle)
                 .then(API.getNewsArticles).then(renderNewsArticles)
 
             clearInputFields()
 
             visToggleFunction()
-        } else {
-            editSaveFunction(hiddenInput.value)
         }
+        } else {
+            if (newsUrlInput.value === "" || newsTitleInput.value === "") {
+                window.alert("Please add more information")
+            } else {
+            editSaveFunction(hiddenInput.value)
+        }}
             
         })
     },
